@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void inputNumber(View view) {
+        if (mNumber.getText().toString().equals("")) {
+            return;
+        }
+        
         int input_number = Integer.parseInt(mNumber.getText().toString());
         mResult.setTextColor(Color.parseColor("#0000ff"));
         if (randomInt > input_number ) {
