@@ -3,6 +3,7 @@ package com.example.guessnumber;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,7 +14,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private int MIN_NUM = 1;
-    private int MAX_NUM = 100;
+    private int MAX_NUM = 1000;
     private EditText mNumber;
     private TextView mResult;
     private int randomInt;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void inputNumber(View view) {
         int input_number = Integer.parseInt(mNumber.getText().toString());
+        mResult.setTextColor(Color.parseColor("#0000ff"));
         if (randomInt > input_number ) {
             mResult.setText(input_number + "보다 더 큰 수입니다.");
         } else if ( randomInt < input_number) {
